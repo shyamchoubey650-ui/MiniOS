@@ -1,0 +1,301 @@
+# id|name|level|subsystem|description      (category is derived from the id range)
+1|help|1|SH|List commands / usage
+2|clear|1|DEV|Clear screen
+3|echo|1|SH|Print text (supports > redirect)
+4|history|1|SH|Show command history
+5|exit|1|SH|End shell session
+6|alias|2|SH|Define alias
+7|unalias|2|SH|Remove alias
+8|set|1|SH|Set shell variable
+9|unset|2|SH|Remove variable
+10|env|2|SH|List variables
+11|export|2|SH|Mark variable exported
+12|source|2|SH+FS|Run commands from file
+13|type|2|SH|Show what a name resolves to
+14|which|2|SH|Locate command
+15|man|2|SH|Show command manual entry
+16|apropos|2|SH|Search command descriptions
+17|cmdcount|2|SH|Count registered commands
+18|cmdinfo|2|SH|Show registry entry details
+19|sleep|1|SYS|Delay N milliseconds (timer-based)
+20|repeat|2|SH|Run a command N times
+21|true|1|SH|Return success
+22|false|1|SH|Return failure
+23|test|2|SH|Evaluate condition
+24|prompt|2|SH|Change prompt string
+25|banner|2|DEV|Show startup banner
+26|touch|1|FS|Create empty file
+27|cat|1|FS|Print file
+28|write|1|FS|Write text to file
+29|append|1|FS|Append text to file
+30|rm|1|FS|Delete file
+31|cp|1|FS|Copy file
+32|mv|1|FS|Move/rename file
+33|rename|2|FS|Rename in place
+34|stat|1|FS|Show inode info
+35|file|2|FS|Guess type (text/binary/empty)
+36|head|2|FS|First N lines
+37|tail|2|FS|Last N lines
+38|more|2|FS+DEV|Page through file
+39|truncate|2|FS|Set file size
+40|ln|3|FS|Create link (stored as copy)
+41|shred|2|FS|Overwrite then delete
+42|trash|2|FS|Move file to /tmp/.trash
+43|undelete|2|FS|Restore from trash
+44|emptytrash|2|FS|Purge trash
+45|exists|2|FS|Test path exists
+46|newer|2|FS|Compare modified times
+47|diff|2|FS+LIB|Line diff of two files
+48|cmp|2|FS|Byte compare
+49|touchn|2|FS|Create N numbered files
+50|fill|2|FS|Fill file with pattern
+51|fdlist|2|FS|List open descriptors
+52|fdinfo|2|FS|Show one descriptor
+53|readfile|1|FS|sys_read demo with offset/length
+54|filesize|2|FS|Print size in bytes
+55|lock|2|FS|Set advisory lock flag
+56|unlock|2|FS|Clear lock flag
+57|backup|2|FS|Copy to name.bak
+58|restore|2|FS|Restore from .bak
+59|swapfiles|2|FS|Swap two files' contents
+60|mkfile|2|FS|Create file of given size
+61|pwd|1|FS|Print working directory
+62|ls|1|FS|List directory
+63|cd|1|FS|Change directory
+64|mkdir|1|FS|Create directory
+65|rmdir|1|FS|Remove empty directory
+66|tree|1|FS|Print directory tree
+67|find|1|FS|Search by name
+68|pushd|2|FS+SH|Push dir and cd
+69|popd|2|FS+SH|Pop dir and cd
+70|dirs|2|SH|Show dir stack
+71|home|2|FS|cd to home
+72|up|2|FS|cd to parent
+73|dircount|2|FS|Count entries
+74|lsdirs|2|FS|List only directories
+75|lsfiles|2|FS|List only files
+76|lsr|2|FS|Recursive listing
+77|mkpath|2|FS|Create nested path
+78|rmtree|2|FS|Recursive delete
+79|cpdir|2|FS|Recursive copy
+80|isdir|2|FS|Test path is directory
+81|ps|1|PROC|List processes
+82|spawn|1|PROC|Create process (kernel task)
+83|kill|1|PROC|Terminate process
+84|wait|1|PROC|Wait for process exit
+85|top|2|PROC|Live process view (tick-refresh)
+86|pstree|2|PROC|Parent/child tree
+87|pid|2|PROC|Print current PID
+88|ppid|2|PROC|Print parent PID
+89|nice|2|PROC|Spawn with priority
+90|renice|2|PROC|Change priority
+91|priority|2|PROC|Show priority
+92|suspend|2|PROC|READY/RUNNING -> WAITING
+93|resume|2|PROC|WAITING -> READY
+94|sched|2|PROC|Show scheduler config
+95|quantum|2|PROC|Show time slice
+96|setquantum|2|PROC|Set time slice
+97|yield|2|PROC|Voluntarily give up CPU
+98|jobs|2|PROC+SH|List shell-spawned processes
+99|bg|3|SH|Background job (flag only)
+100|fg|3|SH|Foreground job (flag only)
+101|pinfo|2|PROC|Detailed PCB dump
+102|pkill|2|PROC|Kill by name
+103|killall|2|PROC|Kill all by name
+104|pgrep|2|PROC|Find PIDs by name
+105|runqueue|2|PROC|Show READY queue order
+106|ctxstat|2|PROC|Context-switch counters
+107|proccount|2|PROC|Count by state
+108|exitcode|2|PROC|Last exit status
+109|procdemo|2|PROC|Spawn demo workloads
+110|schedtrace|2|PROC+LOG|Log scheduling decisions
+111|mem|1|MEM|Memory summary
+112|free|1|MEM|Free memory report
+113|meminfo|2|MEM|Detailed statistics
+114|memmap|2|MEM|Multiboot memory map
+115|heap|2|MEM|Heap layout/blocks
+116|alloc|2|MEM|Allocate N bytes
+117|dealloc|2|MEM|Free an allocation
+118|memstat|2|MEM|Alloc/free counters
+119|memtest|2|MEM|Heap stress test
+120|memfrag|2|MEM|Fragmentation estimate
+121|blocks|2|MEM|List allocated blocks
+122|memdump|2|MEM|Hex dump of address range
+123|memfill|2|MEM|Fill allocated block
+124|pages|2|MEM|Physical page-frame map
+125|memlimit|3|MEM+PROC|Per-process limit (accounting only)
+126|whoami|1|SEC|Current user
+127|users|1|SEC|List users
+128|login|1|SEC|Log in
+129|logout|1|SEC|Log out
+130|su|2|SEC|Switch user
+131|sudo|2|SEC|Run one command as root
+132|useradd|2|SEC|Add user
+133|userdel|2|SEC|Delete user
+134|passwd|2|SEC|Change password
+135|id|2|SEC|UID/GID info
+136|groups|2|SEC|Show groups
+137|who|2|SEC|Logged-in sessions
+138|last|2|SEC+LOG|Login history (from log)
+139|usermod|2|SEC|Modify user
+140|userinfo|2|SEC|Show user record
+141|lockuser|2|SEC|Disable account
+142|unlockuser|2|SEC|Enable account
+143|homedir|2|SEC|Print home directory
+144|sessions|2|SEC|Session table
+145|motd|2|SEC+FS|Show message of the day
+146|chmod|1|SEC+FS|Change mode bits
+147|chown|1|SEC+FS|Change owner
+148|chgrp|2|SEC+FS|Change group
+149|umask|2|SEC|Default creation mask
+150|access|2|SEC|Check r/w/x for user
+151|perms|2|SEC|Show permission string
+152|audit|2|SEC+LOG|Show security events
+153|secstatus|2|SEC|Security summary
+154|hashpw|2|SEC|Show hash of input (salted)
+155|checkpw|2|SEC|Verify password
+156|readonly|2|SEC+FS|Set read-only
+157|writable|2|SEC+FS|Clear read-only
+158|protect|2|SEC+FS|Protect from deletion
+159|unprotect|2|SEC+FS|Remove protection
+160|whoowns|2|SEC+FS|Show owner
+161|df|1|FS|Space usage per filesystem
+162|du|1|FS|Space used by path
+163|mount|3|BLK|Mount (table only)
+164|umount|3|BLK|Unmount (table only)
+165|lsblk|2|BLK|List block devices
+166|fdisk|3|BLK|Partition table view
+167|mkfs|2|BLK+FS|Format RAM-disk with MiniFS
+168|fsck|2|FS|Check MiniFS consistency
+169|sync|2|BLK|Explain that nothing is cached (use savefs)
+170|diskinfo|2|BLK|RAM-disk geometry
+171|ramdisk|2|BLK|RAM-disk size/status
+172|blkread|2|BLK|Read block N
+173|blkwrite|2|BLK|Write block N
+174|blkdump|2|BLK|Hex dump of block
+175|inodes|2|FS|Inode usage
+176|freeblocks|2|FS|Free-block count
+177|fsstat|2|FS|Filesystem statistics
+178|fsdump|2|FS|Dump superblock/layout
+179|savefs|2|BLK|Save MiniFS image to the RAM-disk (root; not ATA)
+180|loadfs|2|BLK|Restore MiniFS from the RAM-disk image (root)
+181|defrag|3|BLK|Defragmentation
+182|quota|3|FS|Per-user quota (display only)
+183|diskbench|2|BLK|Timing benchmark of RAM-disk sectors (root)
+184|smart|3|BLK|Fake health report
+185|badblocks|2|BLK|Read/write-test RAM-disk sectors (root)
+186|version|1|SYS|MiniOS version
+187|sysinfo|1|SYS|System summary
+188|uname|2|SYS|OS/arch name
+189|uptime|1|SYS|Time since boot (timer ticks)
+190|date|1|SYS|Date (CMOS RTC)
+191|time|1|SYS|Time (CMOS RTC)
+192|hostname|2|SYS|Show/set hostname
+193|cpuinfo|2|CPU|CPU vendor/features
+194|cpuid|2|CPU|Raw CPUID leaf
+195|ticks|2|DEV|Raw timer ticks
+196|timerinfo|2|DEV|PIT frequency/config
+197|irqinfo|2|CPU|IRQ counters
+198|idtinfo|2|CPU|IDT entries
+199|gdtinfo|2|CPU|GDT entries
+200|kernelinfo|2|SYS|Kernel size/layout
+201|bootinfo|2|SYS|Multiboot info
+202|vgainfo|2|DEV|Text-mode info
+203|kbdinfo|2|DEV|Keyboard state
+204|devices|2|DEV|List registered devices
+205|reboot|1|SYS|Restart (keyboard-controller reset)
+206|shutdown|1|SYS|Power off (QEMU ACPI port)
+207|halt|2|SYS|Stop CPU
+208|arch|2|SYS|Print architecture
+209|osname|2|SYS|Print OS name
+210|about|2|SYS|Project credits/info
+211|wc|1|LIB+FS|Count lines/words/bytes
+212|sort|2|LIB|Sort lines
+213|uniq|2|LIB|Remove adjacent duplicates
+214|grep|1|LIB+FS|Search pattern in file
+215|cut|2|LIB|Cut fields
+216|tr|2|LIB|Translate characters
+217|rev|2|LIB|Reverse each line
+218|nl|2|LIB|Number lines
+219|tac|2|LIB|Reverse line order
+220|fold|2|LIB|Wrap lines
+221|upper|2|LIB|To uppercase
+222|lower|2|LIB|To lowercase
+223|capitalize|2|LIB|Capitalize words
+224|sum|2|LIB|Add numbers
+225|min|2|LIB|Smallest number
+226|max|2|LIB|Largest number
+227|avg|2|LIB|Average
+228|join|2|LIB|Join lines with separator
+229|split|2|LIB|Split by delimiter
+230|paste|2|LIB+FS|Merge two files side by side
+231|strlen|2|LIB|String length
+232|repeatstr|2|LIB|Repeat string N times
+233|trim|2|LIB|Trim whitespace
+234|replace|2|LIB|Replace substring
+235|contains|2|LIB|Substring test
+236|startswith|2|LIB|Prefix test
+237|endswith|2|LIB|Suffix test
+238|hexdump|2|LIB+FS|Hex view of file
+239|ascii|2|LIB|ASCII table
+240|wordfreq|2|LIB|Word frequency
+241|ping|3|NET|Simulated reply from loopback
+242|ifconfig|3|NET|Show virtual interface
+243|ip|3|NET|Virtual address info
+244|netstat|3|NET|Virtual socket table
+245|traceroute|3|NET|Simulated hops
+246|nslookup|3|NET|Lookup in a static table
+247|dig|3|NET|Same, verbose
+248|host|3|NET|Static host table
+249|arp|3|NET|Virtual ARP cache
+250|route|3|NET|Virtual route table
+251|curl|3|NET|Fetch from virtual local store
+252|wget|3|NET|Same, saves to file
+253|telnet|3|NET|Simulated session
+254|ssh|3|NET|Simulated session
+255|ftp|3|NET|Simulated transfer
+256|nc|3|NET|Loopback message demo
+257|whois|3|NET|Static record
+258|netinfo|3|NET|Explains what is simulated
+259|loopback|2|NET+PROC|In-memory message queue between tasks
+260|netsim|2|NET|Toggle simulation settings
+261|logs|1|LOG|Show kernel log
+262|dmesg|2|LOG|Boot messages
+263|loglevel|2|LOG|Set minimum level
+264|logclear|2|LOG|Clear log buffer
+265|logsave|2|LOG+FS|Save log to /var/log/system.log
+266|logtail|2|LOG|Last N log lines
+267|logfind|2|LOG|Search log
+268|logstats|2|LOG|Counts per level
+269|panic|2|SYS|Trigger test kernel panic
+270|regs|2|CPU|Dump CPU registers
+271|stack|2|CPU|Dump stack words
+272|peek|2|MEM|Read memory address
+273|poke|2|MEM|Write memory address (guarded)
+274|trace|3|LOG|Toggle syscall trace log
+275|strace|3|LOG|Per-process trace (partial view)
+276|errno|2|SYS|Explain error code
+277|errlist|2|SYS|List all error codes
+278|selftest|2|SYS|Run in-kernel tests
+279|diag|2|SYS|Subsystem health summary
+280|breakpoint|2|CPU|Software breakpoint (int3)
+281|calc|1|LIB|Integer expression evaluator
+282|cal|2|SYS|Monthly calendar
+283|random|2|LIB|Pseudo-random number (LCG)
+284|base|2|LIB|Convert number bases
+285|color|1|DEV|Set VGA text colors
+286|beep|2|DEV|PC speaker tone
+287|clock|2|SYS|Live clock (tick-refresh)
+288|timer|2|SYS|Countdown
+289|stopwatch|2|SYS|Start/stop timing
+290|note|2|FS|Append quick note to file
+291|factor|2|LIB|Prime factors
+292|prime|2|LIB|Primality test
+293|fib|2|LIB|Fibonacci
+294|gcd|2|LIB|Greatest common divisor
+295|seq|2|LIB|Number sequence
+296|yes|2|SH|Repeat text (Ctrl-C to stop)
+297|dice|2|LIB|Random dice roll
+298|cowsay|2|LIB|ASCII speech bubble
+299|demo|2|SH|Run guided presentation script
+300|credits|2|SYS|Team/project credits
